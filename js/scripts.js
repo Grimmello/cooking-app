@@ -1,32 +1,70 @@
-var gallonsLiter = function(gallon) {
+function gallonsLiter (gallon) {
   return gallon * 3.78;
 };
 
-
-
-var litersGal = function(liter) {
+function litersGal (liter) {
   return liter * 0.26;
 };
 
-var teaspoon = function(tablespoon) {
+function teaspoon (tablespoon) {
   return tablespoon * 3;
 };
 
-var tablespoon = function(teaspoon) {
+function tablespoon (teaspoon) {
   return teaspoon * 0.333333;
 };
 
-var oz = function(cup) {
+function oz (cup) {
   return cup * 8;
 };
 
-var cup = function(oz) {
+function cup (oz) {
   return oz * 0.125;
 };
 
-var userInput = parseInt(prompt("Enter the number of teaspoons you wish to convert to Tablespoons."));
+$(function(){
+  $("form#gallonsLiter").submit(function(event) {
+    //debugger;
+    var gallon = parseInt($("input#gL").val());
+    var result1 = gallonsLiter("gallon");
+    $("#output1").text(result1);
+    event.preventDefault();
+    console.log(result1);
+  });
 
-var result = tablespoon(userInput);
+  $("form#litersGal").submit(function(event) {
+    var number = parseInt($("#lG").val());
+    var result2 = litersGal("input#lG");
+    $("#output2").text(result2);
+    event.preventDefault();
+  });
 
+  $("form#teaspoon").submit(function(event) {
+    var number = parseInt($("#tSpoon").val());
+    var result3 = teaspoon("input#tSpoon");
+    $("#output3").text(result3);
+    event.preventDefault();
+  });
 
-alert(" The Conversion is : " + result);
+  $("form#tablespoon").submit(function(event) {
+    var number = parseInt($("#table").val());
+    var result4 = tablespoon("input#table");
+    $("#output4").text(result4);
+    event.preventDefault();
+  });
+
+  $("form#ounce").submit(function(event) {
+    var number = parseInt($("#oz").val());
+    var result5 = oz("input#oz");
+    $("#output5").text(result5);
+    event.preventDefault();
+  });
+
+  $("form#cups").submit(function(event) {
+    var number = parseInt($("#cup").val());
+    var result6 = cup("input#cup");
+    $("#output6").text(result6);
+    event.preventDefault();
+
+  });
+});
